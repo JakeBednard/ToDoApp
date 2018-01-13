@@ -1,8 +1,8 @@
 ToDo Task Tracker Application – Work Break Down
 Jacob Bednard
 
-Total Estimated (hours):
-Total Actual (hours):
+Total Estimated (hours): 6.75
+Total Actual (hours): 7
 
 Task: Install Git, WAMP Stack, and Read Documentation:
 Estimated (hours): 1.5
@@ -36,19 +36,19 @@ Issues:
 
 Task: Create Data Flow Diagram
 Estimated (hours): 1
-Actual (hours): 1
+Actual (hours): .75
 Notes: 
 Issues: 
 
-Task: 
-Estimated (hours): 
-Actual (hours):
+Task: Create database design and diagram
+Estimated (hours): 0.5
+Actual (hours): 0.25
 Notes:
 Issues: 
 
-Task: 
-Estimated (hours): 
-Actual (hours):
+Task: Create class diagram
+Estimated (hours): 0.5
+Actual (hours): 0.25
 Notes:
 Issues: 
 
