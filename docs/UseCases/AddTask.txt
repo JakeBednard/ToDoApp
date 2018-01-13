@@ -1,0 +1,20 @@
+Name: Add Task
+Actors: User
+
+Trigger:
+User clicks add task button.
+
+Preconditions:
+User wants to submit a new task to tracking application.
+User has correctly completed form.
+
+Postconditions:
+User’s task data is forwarded to backend and inserted into database.
+User’s task display table is pre-pended with added task
+
+Description:
+To utilize the application, the user decides to add a task to the task tracker. 
+Using a data fields found on the page, the user enters data. When complete, the 
+user clicks “Add” to submit the data to the application. The data is passed to 
+the backend where it is inserted to the database. After a successful insertion, 
+the user’s page is updated to show the new task at the top of the display table.

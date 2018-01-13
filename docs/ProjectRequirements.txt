@@ -1,0 +1,17 @@
+Functional Requirements:
+1. User must be able to add tasks, view tasks, delete tasks.
+2. Each task must hold an editable status (Pending, Started, Completed, Late).
+3. Each task must hold a due date (DD/MM/YYYY).
+4. On page load, if a task is overdue, set task status to “Late”.
+5. User must be able to see total count of tasks in queue.
+6. User must be able to see break down counts for each task status.
+7. Clicking a status count badge filters the display of task to the chosen status.
+8. PowerShell script to configure files and server after deployment.
+
+Non-Functional Requirements:
+1. Application must use WAMP stack (Windows, Apache, MySQL, PHP).
+2. Front-end must use HTML5, JavaScript, jQuery, Bootstrap.
+3. User interface must exist on a single page.
+4. Project directory hierarchy must be well organized into logical locations.
+5. Object Oriented PHP and JavaScript prototypes must be used to logically categorize data.
+6. Field validation shall occur in JavaScript or HTML5. If an input error is detected, notify user; don’t submit.

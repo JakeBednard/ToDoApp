@@ -1,0 +1,15 @@
+Name: User Loads Page
+Actors: User
+
+Trigger:
+User browses to http address where task tracker is hosted.
+
+Preconditions:
+User types in url in Brower window and launches request to get web page.
+
+Postconditions:
+The user request is fulfilled by the of an return up-to-date version of the application. 
+
+Description:
+A user browses to the application url. When the users request is fetched, index.php is 
+processed and sent back to the user with additional supporting files.

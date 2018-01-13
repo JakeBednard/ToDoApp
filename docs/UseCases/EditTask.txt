@@ -1,0 +1,19 @@
+Name: Edit Task
+Actors: User
+
+Trigger:
+User clicks edit task button.
+
+Preconditions:
+User wants to edit an existing task.
+
+Postconditions:
+User’s task data is forwarded to backend and updated database.
+User’s task display table is updated to show edited task
+
+Description:
+A user notices an entry error or wishes to update a task. The user 
+clicks the edit task button and a modal window is shown with the user’s 
+data in text fields. The user can then edit the data and click “submit” 
+to send the data to the backend to update in the database. The edited 
+data is then reflected in the task display table.

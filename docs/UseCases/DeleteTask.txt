@@ -1,0 +1,18 @@
+Name: Delete Task
+Actors: User
+
+Trigger:
+User clicks delete task button located in the edit window.
+
+Preconditions:
+User wants to delete an existing task.
+
+Postconditions:
+User’s task deletion selection is forwarded to backend and removed from the database.
+User’s task display table is updated with the deleted task removed.
+
+Description:
+A user wishes to delete a task out of the tracker. To do so the user selects edit for 
+a task, then clicks the delete task in the edit modal window. The id of that task is 
+then forwarded to the backend for deletion out of the database. Finally, the users task 
+table has the selected task removed.

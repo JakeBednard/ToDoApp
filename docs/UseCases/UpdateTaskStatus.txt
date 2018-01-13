@@ -1,0 +1,16 @@
+Name: Update Task Status
+Actors: User
+
+Trigger:
+User selects new status for task using the status selection dropdown on the task line in the task display table.
+
+Preconditions:
+User changes task status using task status dropdown menu.
+
+Postconditions:
+User’s task status change is forwarded to backend and updated in database.
+User’s task display table is updated with the updated task status.
+
+Description:
+A user decides to update the status of a task in the task display table. Using the task status dropdown, the 
+task is given a new status. Post-click, the status update is sent to the database for updating.

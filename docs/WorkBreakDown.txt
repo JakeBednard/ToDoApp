@@ -1,0 +1,84 @@
+ToDo Task Tracker Application – Work Break Down
+Jacob Bednard
+
+Total Estimated (hours):
+Total Actual (hours):
+
+Task: Install Git, WAMP Stack, and Read Documentation:
+Estimated (hours): 1.5
+Actual (hours): 2
+Notes: Bitnami WAMP Stack (Apache 2.4.29, MySQL 5.7.20, PHP 7.1.13).
+Issues: Extra time used to setup github keys.
+
+Task: Requirement Document
+Estimated (hours): 0.5
+Actual (hours): 0.5
+Notes:
+Issues: 
+
+Task: Generate User Use Cases
+Estimated (hours): 0.75
+Actual (hours): 1.5
+Notes: 
+Issues: Had to read up on writing use cases.
+
+Task: Create System Architecture Diagram
+Estimated (hours): 0.5
+Actual (hours): 0.5
+Notes:
+Issues: 
+
+Task: Create Six Sequence Diagrams
+Estimated (hours): 1.5
+Actual (hours): 1
+Notes:
+Issues: 
+
+Task: Create Data Flow Diagram
+Estimated (hours): 1
+Actual (hours): 1
+Notes: 
+Issues: 
+
+Task: 
+Estimated (hours): 
+Actual (hours):
+Notes:
+Issues: 
+
+Task: 
+Estimated (hours): 
+Actual (hours):
+Notes:
+Issues: 
+
+Task: 
+Estimated (hours): 
+Actual (hours):
+Notes:
+Issues: 
+
+Task: 
+Estimated (hours): 
+Actual (hours):
+Notes:
+Issues: 
+
+Task: 
+Estimated (hours): 
+Actual (hours):
+Notes:
+Issues: 
+
+Task: 
+Estimated (hours): 
+Actual (hours):
+Notes:
+Issues: 
+
+Task: 
+Estimated (hours): 
+Actual (hours):
+Notes:
+Issues: 
+

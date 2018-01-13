@@ -1,0 +1,16 @@
+Name: Filter Task By Status
+Actors: User
+
+Trigger:
+User clicks a displayed aggregate count for a specific status.
+
+Preconditions:
+User clicks a displayed aggregate count for a specific status.
+
+Postconditions:
+User’s task table is update to show only tasks of a specific status.
+
+Description:
+A user decides to filter task by their status. By clicking a aggregate status count 
+at the top of the table, but data is then filtered via middleware to display tasks of 
+the selected status.
