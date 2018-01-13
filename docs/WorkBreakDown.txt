@@ -1,8 +1,11 @@
 ToDo Task Tracker Application – Work Break Down
 Jacob Bednard
 
-Total Estimated (hours): 6.75
-Total Actual (hours): 7
+Entire Project Estimate (hours): 18  
+Entire Project Actual (hours):
+
+Total Per Task Estimated (hours): 6.75
+Total Per Task Actual (hours): 7
 
 Task: Install Git, WAMP Stack, and Read Documentation:
 Estimated (hours): 1.5
@@ -10,7 +13,7 @@ Actual (hours): 2
 Notes: Bitnami WAMP Stack (Apache 2.4.29, MySQL 5.7.20, PHP 7.1.13).
 Issues: Extra time used to setup github keys.
 
-Task: Requirement Document
+Task: Create Requirements Document
 Estimated (hours): 0.5
 Actual (hours): 0.5
 Notes:
@@ -52,14 +55,14 @@ Actual (hours): 0.25
 Notes:
 Issues: 
 
-Task: 
-Estimated (hours): 
-Actual (hours):
+Task: Review PHP docs, Implement Directory Strucuture, Create Configuration File
+Estimated (hours): 1
+Actual (hours): 0.75
 Notes:
 Issues: 
 
-Task: 
-Estimated (hours): 
+Task: Create database access object
+Estimated (hours): 0.5
 Actual (hours):
 Notes:
 Issues: 
