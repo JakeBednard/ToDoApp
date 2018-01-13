@@ -46,19 +46,13 @@ class DB {
     function query($query) {
 
         $connection = new mysqli($this->server, $this->username, $this->password, $this->database);
+        $result = -1;
 
-        if($connection->connect_error) {
-            die("Connection Failed: " . $connection->connect_error);
+        if($connection->query($query) === TRUE) {
+            $result= 0;
         }
 
-        $result = $connection->query($query);
-
-        $rows = array();
-        while($row = mysqli_fetch_assoc($result)) {
-            $rows[] = $row;
-        }
-
-        return;
+        return $result;
 
     }
 
