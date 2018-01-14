@@ -21,8 +21,10 @@ function createDatabase() {
 
     $success &= initSchema($server, $database, $username, $password);
     $success &= initTables($server, $database, $username, $password);
+    $success &= insertTaskStatusOptions($server, $database, $username, $password);
 
-    echo $success;
+    if($success) { echo "SUCCESS"; }
+    else { echo "FAILED"; }
 
     return;
 
@@ -58,7 +60,7 @@ function initTables($server, $database, $username, $password) {
       
         PRIMARY KEY (N_TASK_STATUS_PK)
     
-      )
+      );
     
     ";
 
@@ -74,7 +76,7 @@ function initTables($server, $database, $username, $password) {
         PRIMARY KEY (N_TASK_PK),
         FOREIGN KEY (N_TASK_STATUS_FK) REFERENCES TASK_STATUS(N_TASK_STATUS_PK)
     
-      )
+      );
     
     ";
 
@@ -88,7 +90,7 @@ function initTables($server, $database, $username, $password) {
       
         PRIMARY KEY (N_ACTION_PK)
     
-      )
+      );
     
     ";
 
@@ -100,6 +102,30 @@ function initTables($server, $database, $username, $password) {
     $success &= $connection->query($createActionLogQuery);
 
     $connection->close();
+
+    return $success;
+
+}
+
+function insertTaskStatusOptions($server, $database, $username, $password) {
+
+    $success = TRUE;
+
+    $insertTaskStatusQuery = "
+
+      INSERT INTO TASK_STATUS  
+        (SZ_DESCRIPTION) 
+      VALUES
+         ('Pending'),
+         ('Started'),
+         ('Completed');
+    
+    ";
+
+    $connection = new mysqli($server, $username, $password, $database);
+    $success &= !($connection->connect_error);
+
+    $success &= $connection->query($insertTaskStatusQuery);
 
     return $success;
 
