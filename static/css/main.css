@@ -1,7 +1,34 @@
-body{
+body {
     background-color: #FFF;
     background: linear-gradient(to bottom, transparent, white 50%), url("../image/banner.test.png") 0px -400px no-repeat;
     background-size: 100% 1200px;
+}
+
+nav {
+    -moz-user-select: none;
+    user-select: none;
+    opacity: 0.8;
+    transition: opacity 100ms linear;
+}
+
+nav:hover {
+    opacity: 0.95;
+    transition: opacity 100ms linear;
+}
+
+footer {
+    text-align: right;
+    margin-top: -12px;
+    padding-bottom: 5px;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.navbar-brand {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bolder;
+    font-size: 1.5em;
+    color: #111 !important;
 }
 
 .task-stat-box {
@@ -10,6 +37,10 @@ body{
     border: 0.5px solid #CCC;
     border-left: none;
     text-align: center;
+    -moz-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    transition: background-color 160ms linear;
 }
 
 .task-stat-box:hover {
@@ -46,13 +77,14 @@ tr:hover > .started {
 }
 
 #main-box {
+    border-radius: 7px 7px 7px 7px;
     box-shadow: 2px 0px 15px 3px rgba(33,33,33,0.15);
+    border: 0.5px solid rgba(33,33,33,0.15);
 }
 
 #add-task-container-box {
     background-color: rgba(255,255,255,0.95);
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
+    border-radius: 7px 7px 0px 0px;
 }
 
 #task-stats-container {
@@ -62,14 +94,16 @@ tr:hover > .started {
 #task-table-container {
     padding-top: 15px;
     background-color: rgba(255,255,255,0.96);
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;;
 }
 
 #total-tasks-count {
     background-color: rgba(255,255,255,.85);
     border-bottom: 0.5px solid #CCC;
     text-align: center;
+    -moz-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    transition: background-color 160ms linear;
 }
 
 #total-tasks-count:hover {
@@ -80,13 +114,13 @@ tr:hover > .started {
 #the-date {
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: bold;
-    font-size: 1.8em;
-    color: #FFF;
+    font-size: 2em;
+    color: #999;
     margin-top: 75px;
+    margin-bottom: -45px;
     padding-top: 10px;
     text-align: right;
-}
-
-#the-date > span {
-
+    z-index: 10;
+    -moz-user-select: none;
+    user-select: none;
 }
