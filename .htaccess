@@ -1,0 +1,11 @@
+Options -Indexes
+
+<FilesMatch "\.(htaccess|ini)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+<files DatabaseConnection.php>
+    order allow,deny
+    deny from all
+</files>
