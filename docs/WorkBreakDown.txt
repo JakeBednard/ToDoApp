@@ -76,8 +76,8 @@ Issues:
 
 Task: Create HTML Front-End
 Estimated (hours): 2
-Actual (hours):
-Notes:
+Actual (hours): 5
+Notes: HTML5, Bootstrap 3, jQuery. Took more time then estimated to clean up UI.
 Issues: 
 
 Task: Create REST task object

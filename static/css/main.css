@@ -7,13 +7,13 @@ body {
 nav {
     -moz-user-select: none;
     user-select: none;
-    opacity: 0.9;
+    opacity: 0.94;
     transition: opacity 100ms linear;
 }
 
 nav:hover {
-    opacity: 0.95;
-    transition: opacity 100ms linear;
+    opacity: 0.97;
+    transition: opacity 50ms linear;
 }
 
 footer {
@@ -54,26 +54,38 @@ footer {
 
 .pending {
     background: linear-gradient(to bottom, #777777, #333333);
+    opacity: 0.8;
+    transition: opacity 200ms linear;
 }
 
 tr:hover > .pending {
     background: linear-gradient(to bottom, #555555, #333333);
+    opacity: 0.9;
+    transition: opacity 200ms linear;
 }
 
 .completed {
-    background: linear-gradient(to top, #80903b, #5cb85c);
+    background: linear-gradient(to top, #70903b, #5cb85c);
+    opacity: 0.8;
+    transition: opacity 200ms linear;
 }
 
 tr:hover > .completed {
     background: linear-gradient(to top, #44892b, #5cb85c);
+    opacity: 0.9;
+    transition: opacity 200ms linear;
 }
 
 .started {
     background: linear-gradient(to bottom,#448ac7 0,#265a88 100%);
+    opacity: 0.8;
+    transition: opacity 200ms linear;
 }
 
 tr:hover > .started {
     background: linear-gradient(to bottom,#337ab7 0,#265a88 100%);
+    opacity: 0.9;
+    transition: opacity 200ms linear;
 }
 
 #main-box {
