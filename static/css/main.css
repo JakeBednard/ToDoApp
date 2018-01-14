@@ -45,10 +45,14 @@ tr:hover > .started {
     background: linear-gradient(to bottom,#337ab7 0,#265a88 100%);
 }
 
+#main-box {
+    box-shadow: 2px 0px 15px 3px rgba(33,33,33,0.15);
+}
+
 #add-task-container-box {
     background-color: rgba(255,255,255,0.95);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
 }
 
 #task-stats-container {
@@ -56,11 +60,10 @@ tr:hover > .started {
 }
 
 #task-table-container {
-
     padding-top: 15px;
     background-color: rgba(255,255,255,0.96);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;;
 }
 
 #total-tasks-count {
@@ -82,7 +85,6 @@ tr:hover > .started {
     margin-top: 75px;
     padding-top: 10px;
     text-align: right;
-
 }
 
 #the-date > span {
