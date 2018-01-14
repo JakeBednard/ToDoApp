@@ -63,25 +63,26 @@ Issues:
 
 Task: Create database access object
 Estimated (hours): 0.5
+Actual (hours): 0.5
+Notes:
+Issues: 
+
+Task: Write Create Table Statements
+Estimated (hours): 0.5
+Actual (hours): 1
+Notes:
+Issues: 
+
+
+Task: Create HTML Front-End
+Estimated (hours): 2
 Actual (hours):
 Notes:
 Issues: 
 
-Task: 
-Estimated (hours): 
+Task: Create REST task object
+Estimated (hours): 1.5
 Actual (hours):
-Notes:
-Issues: 
-
-Task: 
-Estimated (hours): 
-Actual (hours):
-Notes:
-Issues: 
-
-Task: 
-Estimated (hours): 
-Actual (hours):
-Notes:
+Notes: Needed to read up on PHP REST/JSON.
 Issues: 
 

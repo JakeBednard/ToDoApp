@@ -1,0 +1,23 @@
+body{
+    background-color: #FFF;
+    background: linear-gradient(to bottom, transparent, white 40%), url("../image/banner.png") 0px -300px no-repeat;
+    background-size: 100% 150%;
+}
+
+#banner {
+    padding-top: 4%;
+    height: 500px;
+    background-color: rgba(255,255,255,0);
+}
+
+#add-task-container-box {
+    background-color: rgba(255,255,255,0.95);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#task-table-container {
+    margin-top: -275px;
+    padding-top: 15px;
+    background-color: rgba(255,255,255,0.96);
+}
