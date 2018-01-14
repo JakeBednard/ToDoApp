@@ -7,7 +7,7 @@ body {
 nav {
     -moz-user-select: none;
     user-select: none;
-    opacity: 0.8;
+    opacity: 0.85;
     transition: opacity 100ms linear;
 }
 
@@ -94,6 +94,10 @@ tr:hover > .started {
 #task-table-container {
     padding-top: 15px;
     background-color: rgba(255,255,255,0.96);
+}
+
+#task-table-container > table > tbody > tr > td {
+    vertical-align: middle;
 }
 
 #total-tasks-count {
