@@ -6,6 +6,8 @@
  * Time: 3:03 PM
  */
 
+createDatabase();
+
 function createDatabase() {
 
     $success = 0;
@@ -21,7 +23,7 @@ function createDatabase() {
     $success = initSchema($server, $database, $username, $password);
 
     // Second create tables
-    $success = initTables($server, $database, $username, $password);
+    $success &= initTables($server, $database, $username, $password);
 
     return $success;
 
@@ -55,10 +57,10 @@ function initTables($server, $database, $username, $password) {
 
       CREATE TABLE TASKS (
 
-        N_TASK_PK         INT           UNSIGNED AUTO_INCREMENT,
+        N_TASK_PK         INT           UNSIGNED      AUTO_INCREMENT,
         SZ_DESCRIPTION    VARCHAR(500)  NOT NULL,
         DT_DUE_DATE       DATE          NOT NULL,
-        N_TASK_STATUS_FK  INT           NOT NULL,
+        N_TASK_STATUS_FK  INT           UNSIGNED      NOT NULL,
       
         PRIMARY KEY (N_TASK_PK),
         FOREIGN KEY (N_TASK_STATUS_FK) REFERENCES TASK_STATUS(N_TASK_STATUS_PK)
@@ -80,7 +82,7 @@ function initTables($server, $database, $username, $password) {
     
     ";
 
-    $createTaskStatusQuery = "
+    $createActionLogQuery = "
 
       CREATE TABLE ACTION_LOG (
 
@@ -107,7 +109,7 @@ function initTables($server, $database, $username, $password) {
         $success = -1;
     }
 
-    if($connection->query($createTaskStatusQuery ) !== TRUE) {
+    if($connection->query($createActionLogQuery) !== TRUE) {
         $success = -1;
     }
 
