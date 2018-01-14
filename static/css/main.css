@@ -7,7 +7,7 @@ body {
 nav {
     -moz-user-select: none;
     user-select: none;
-    opacity: 0.85;
+    opacity: 0.9;
     transition: opacity 100ms linear;
 }
 
@@ -52,24 +52,24 @@ footer {
     margin-left: 5%;
 }
 
-.late {
-    background: linear-gradient(to bottom, #d10000, #FF0000);
+.pending {
+    background: linear-gradient(to bottom, #777777, #333333);
 }
 
-tr:hover > .late {
-    background: linear-gradient(to bottom, #d10000, #CC0000);
+tr:hover > .pending {
+    background: linear-gradient(to bottom, #555555, #333333);
 }
 
 .completed {
-    background: #5cb85c;
+    background: linear-gradient(to top, #80903b, #5cb85c);
 }
 
 tr:hover > .completed {
-    background: linear-gradient(to top, #44802b, #5cb85c);
+    background: linear-gradient(to top, #44892b, #5cb85c);
 }
 
 .started {
-    background: linear-gradient(to bottom,#337ab7 0,#265a88 100%);
+    background: linear-gradient(to bottom,#448ac7 0,#265a88 100%);
 }
 
 tr:hover > .started {
