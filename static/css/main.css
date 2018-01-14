@@ -6,8 +6,9 @@ body{
 
 .task-stat-box {
     height: 44px;
-    background-color: rgba(255,255,255,.7);
+    background-color: rgba(255,255,255,.85);
     border: 0.5px solid #CCC;
+    border-left: none;
     text-align: center;
 }
 
@@ -19,15 +20,10 @@ body{
     margin-left: 5%;
 }
 
-#banner {
-    padding-top: 4%;
-    background-color: rgba(255,255,255,0);
-}
-
 #add-task-container-box {
     background-color: rgba(255,255,255,0.95);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 #task-stats-container {
@@ -38,11 +34,13 @@ body{
 
     padding-top: 15px;
     background-color: rgba(255,255,255,0.96);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 #total-tasks-count {
-    background-color: rgba(255,255,255,.7);
-    border: 0.5px solid #CCC;
+    background-color: rgba(255,255,255,.85);
+    border-bottom: 0.5px solid #CCC;
     text-align: center;
 }
 
