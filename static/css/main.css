@@ -1,6 +1,6 @@
 body{
     background-color: #FFF;
-    background: linear-gradient(to bottom, transparent, white 50%), url("../image/banner.png") 0px -300px no-repeat;
+    background: linear-gradient(to bottom, transparent, white 50%), url("../image/banner.test.png") 0px -400px no-repeat;
     background-size: 100% 1200px;
 }
 
@@ -14,10 +14,35 @@ body{
 
 .task-stat-box:hover {
     background-color: rgba(255,255,255,1);
+    transition: background-color 200ms linear;
 }
 
 .stat-count {
     margin-left: 5%;
+}
+
+.late {
+    background: linear-gradient(to bottom, #d10000, #FF0000);
+}
+
+tr:hover > .late {
+    background: linear-gradient(to bottom, #d10000, #CC0000);
+}
+
+.completed {
+    background: #5cb85c;
+}
+
+tr:hover > .completed {
+    background: linear-gradient(to top, #44802b, #5cb85c);
+}
+
+.started {
+    background: linear-gradient(to bottom,#337ab7 0,#265a88 100%);
+}
+
+tr:hover > .started {
+    background: linear-gradient(to bottom,#337ab7 0,#265a88 100%);
 }
 
 #add-task-container-box {
@@ -46,4 +71,20 @@ body{
 
 #total-tasks-count:hover {
     background-color: rgba(255,255,255,1);
+    transition: background-color 200ms linear;
+}
+
+#the-date {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 1.8em;
+    color: #FFF;
+    margin-top: 75px;
+    padding-top: 10px;
+    text-align: right;
+
+}
+
+#the-date > span {
+
 }
