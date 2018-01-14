@@ -1,6 +1,6 @@
 body {
     background-color: #FFF;
-    background: linear-gradient(to bottom, transparent, white 50%), url("../image/banner.test.png") 0px -400px no-repeat;
+    background: linear-gradient(to bottom, transparent, white 50%), url("../image/banner.png") 0px -400px no-repeat;
     background-size: 100% 1200px;
 }
 
