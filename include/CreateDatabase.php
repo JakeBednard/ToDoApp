@@ -10,7 +10,7 @@ createDatabase();
 
 function createDatabase() {
 
-    $success = 0;
+    $success = TRUE;
 
     $ini = parse_ini_file("../configuration.ini");
 
@@ -19,29 +19,25 @@ function createDatabase() {
     $username = $ini["db_username"];
     $password = $ini["db_password"];
 
-    // First connect to DB and create Database Schema
-    $success = initSchema($server, $database, $username, $password);
-
-    // Second create tables
+    $success &= initSchema($server, $database, $username, $password);
     $success &= initTables($server, $database, $username, $password);
 
-    return $success;
+    echo $success;
+
+    return;
 
 }
 
 function initSchema($server, $database, $username, $password) {
 
-    $connection = new mysqli($server, $username, $password);
-    $success = 0;
+    $success = TRUE;
 
-    if($connection->connect_error) {
-        die("Connection Failed: " . $connection->connect_error);
-    }
+    $connection = new mysqli($server, $username, $password);
+    $success &= !($connection->connect_error);
 
     $query = "CREATE DATABASE " . $database;
-    if($connection->query($query) !== TRUE) {
-        $success = -1;
-    }
+
+    $success &= $connection->query($query);
 
     $connection->close();
 
@@ -51,7 +47,20 @@ function initSchema($server, $database, $username, $password) {
 
 function initTables($server, $database, $username, $password) {
 
-    $success = 0;
+    $success = TRUE;
+
+    $createTaskStatusQuery = "
+
+      CREATE TABLE TASK_STATUS (
+
+        N_TASK_STATUS_PK  INT           UNSIGNED AUTO_INCREMENT,
+        SZ_DESCRIPTION    VARCHAR(100)  NOT NULL,
+      
+        PRIMARY KEY (N_TASK_STATUS_PK)
+    
+      )
+    
+    ";
 
     $createTaskQuery = "
 
@@ -64,19 +73,6 @@ function initTables($server, $database, $username, $password) {
       
         PRIMARY KEY (N_TASK_PK),
         FOREIGN KEY (N_TASK_STATUS_FK) REFERENCES TASK_STATUS(N_TASK_STATUS_PK)
-    
-      )
-    
-    ";
-
-    $createTaskStatusQuery = "
-
-      CREATE TABLE TASK_STATUS (
-
-        N_TASK_STATUS_PK  INT           UNSIGNED AUTO_INCREMENT,
-        SZ_DESCRIPTION    VARCHAR(100)  NOT NULL,
-      
-        PRIMARY KEY (N_TASK_STATUS_PK)
     
       )
     
@@ -97,21 +93,11 @@ function initTables($server, $database, $username, $password) {
     ";
 
     $connection = new mysqli($server, $username, $password, $database);
-    if($connection->connect_error) {
-        die("Connection Failed: " . $connection->connect_error);
-    }
+    $success &= !($connection->connect_error);
 
-    if($connection->query($createTaskStatusQuery) !== TRUE) {
-        $success = -1;
-    }
-
-    if($connection->query($createTaskQuery) !== TRUE) {
-        $success = -1;
-    }
-
-    if($connection->query($createActionLogQuery) !== TRUE) {
-        $success = -1;
-    }
+    $success &= $connection->query($createTaskStatusQuery);
+    $success &= $connection->query($createTaskQuery);
+    $success &= $connection->query($createActionLogQuery);
 
     $connection->close();
 
