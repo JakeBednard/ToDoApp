@@ -1,23 +1,51 @@
 body{
     background-color: #FFF;
-    background: linear-gradient(to bottom, transparent, white 40%), url("../image/banner.png") 0px -300px no-repeat;
-    background-size: 100% 150%;
+    background: linear-gradient(to bottom, transparent, white 50%), url("../image/banner.png") 0px -300px no-repeat;
+    background-size: 100% 1200px;
+}
+
+.task-stat-box {
+    height: 44px;
+    background-color: rgba(255,255,255,.7);
+    border: 0.5px solid #CCC;
+    text-align: center;
+}
+
+.task-stat-box:hover {
+    background-color: rgba(255,255,255,1);
+}
+
+.stat-count {
+    margin-left: 5%;
 }
 
 #banner {
     padding-top: 4%;
-    height: 500px;
     background-color: rgba(255,255,255,0);
 }
 
 #add-task-container-box {
     background-color: rgba(255,255,255,0.95);
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#task-stats-container {
+
 }
 
 #task-table-container {
-    margin-top: -275px;
+
     padding-top: 15px;
     background-color: rgba(255,255,255,0.96);
+}
+
+#total-tasks-count {
+    background-color: rgba(255,255,255,.7);
+    border: 0.5px solid #CCC;
+    text-align: center;
+}
+
+#total-tasks-count:hover {
+    background-color: rgba(255,255,255,1);
 }
