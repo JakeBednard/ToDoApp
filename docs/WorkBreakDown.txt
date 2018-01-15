@@ -2,10 +2,10 @@ ToDo Task Tracker Application – Work Break Down
 Jacob Bednard
 
 Entire Project Estimate (hours): 18  
-Entire Project Actual (hours):
+Entire Project Actual (hours): 25.5
 
-Total Per Task Estimated (hours): 6.75
-Total Per Task Actual (hours): 7
+Total Per Task Estimated (hours): 18.25
+Total Per Task Actual (hours): 25.5
 
 Task: Install Git, WAMP Stack, and Read Documentation:
 Estimated (hours): 1.5
@@ -117,6 +117,6 @@ Issues:
 
 Task: Misc Wrap-Up Activities
 Estimated (hours): .5
-Actual (hours): 2.5
+Actual (hours): .25
 Notes:
 Issues:
