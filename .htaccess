@@ -9,3 +9,8 @@ Options -Indexes
     order allow,deny
     deny from all
 </FilesMatch>
+
+<Files "CreateDatabase.php">
+     order allow,deny
+     deny from all
+</Files>

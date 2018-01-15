@@ -1,9 +1,11 @@
 $(document).ready(function(){
 
+    // Used to speed up loading, by "caching" possible tasks status values
     var taskStatusesHTMLString;
 
     onPageLoad();
     function onPageLoad() {
+        updateTodaysDate()
         taskStatusesHTMLString = fetchTaskStatuses();
         loadTaskTable();
     }
@@ -27,7 +29,23 @@ $(document).ready(function(){
 
     }
 
+    function updateTodaysDate() {
+
+        // Format a date string for placement in the top-right of page
+        var today = new Date();
+        var day = today.getDate();
+        var month = today.getMonth()+1;
+        var year = today.getFullYear();
+
+        var dateAsString = month + '/' + day + '/' + year;
+
+        $("#todays-date").text(dateAsString);
+
+    }
+
     function loadTaskTable() {
+
+        setTimeout(console.log(""), 1000);
 
         var tasks = getAllTasks();
 
@@ -136,6 +154,7 @@ $(document).ready(function(){
     }
 
     $("#add-task-submit").click(function() {
+
         submitNewTaskToDB(
             {
                 SZ_DESCRIPTION: $("#task-SZ_TASK_DESCRIPTION").val(),
@@ -143,7 +162,12 @@ $(document).ready(function(){
                 N_TASK_STATUS_FK: 1
             }
         );
+
         loadTaskTable();
+
+        $("#task-SZ_TASK_DESCRIPTION").val('');
+        $("#task-DT_DUE_DATE").val('');
+
     });
 
     function submitNewTaskToDB(data) {
@@ -162,7 +186,9 @@ $(document).ready(function(){
 
     function attachClickListeners() {
 
+        $(".delete-task").unbind();
         $(".delete-task").click(function (event) {
+
             var id = $(event.target).closest("tr").attr("id");
             $.ajax({
                 url: "include/task.php?id=" + id,
@@ -171,8 +197,10 @@ $(document).ready(function(){
                     loadTaskTable();
                 }
             });
+
         });
 
+        $(".edit-task").unbind();
         $(".edit-task").click(function (event) {
 
             var id = $(event.target).closest("tr").attr("id");
@@ -189,6 +217,7 @@ $(document).ready(function(){
 
         });
 
+        $("#edit-task-submit").unbind();
         $("#edit-task-submit").click(function (event) {
 
             updateTaskToDB(
@@ -204,9 +233,15 @@ $(document).ready(function(){
 
             $("#edit-task-container-box").slideUp();
 
+            $("#edittask-SZ_TASK_DESCRIPTION").val('');
+            $("#edittask-DT_DUE_DATE").val('');
+
         });
 
-        $('.status-select').on('change', function() {
+        $(".status-select").unbind();
+        $('.status-select').on('change', function () {
+
+            console.log("Selection Changed!");
 
             var id = $(this).closest("tr").attr("id");
             var currentDescription = $(this).closest("tr").children(".col-task-description").text();
@@ -224,8 +259,60 @@ $(document).ready(function(){
 
             loadTaskTable();
 
+        });
+
+    }
+
+    $("#pending-task-container").click(function() {
+        filterTaskRowsByTerm("Pending");
+    });
+
+    $("#started-task-container").click(function() {
+        filterTaskRowsByTerm("Started");
+    });
+
+    $("#completed-task-container").click(function() {
+        filterTaskRowsByTerm("Completed");
+    });
+
+    $("#late-task-container").click(function() {
+
+        $("#task-table > tbody tr").each(function(i, row) {
+
+            if($(this).hasClass("danger")) {
+                $(this).slideDown();
+            }
+
+            else {
+                $(this).slideUp();
+            }
+
         })
 
+    });
+
+    $("#total-tasks-count").click(function() {
+        $("#task-table > tbody tr").each(function(i, row) {
+            $(this).slideDown();
+        });
+    });
+
+
+    function filterTaskRowsByTerm(term) {
+        $("#task-table > tbody tr").each(function(i, row) {
+
+            // Thankful of Firefox's path tool to get this selector to grab the task status selector.
+            rowType = $("td:nth-child(4) > select:nth-child(1) option:selected", this).text();
+
+            if(rowType != term) {
+                $(this).slideUp();
+            }
+
+            else {
+                $(this).slideDown();
+            }
+
+        });
     }
 
     function updateTaskToDB(data, id) {

@@ -12,7 +12,7 @@ function createDatabase() {
 
     $success = TRUE;
 
-    $ini = parse_ini_file("../configuration.ini");
+    $ini = parse_ini_file($_SERVER['DOCUMENT_ROOT'] . "/configuration.ini");
 
     $server = $ini["db_address"];
     $database = $ini["db_name"];
@@ -23,8 +23,8 @@ function createDatabase() {
     $success &= initTables($server, $database, $username, $password);
     $success &= insertTaskStatusOptions($server, $database, $username, $password);
 
-    if($success) { echo "SUCCESS"; }
-    else { echo "FAILED"; }
+    if($success) { echo 1; }
+    else { echo 0; }
 
     return;
 
