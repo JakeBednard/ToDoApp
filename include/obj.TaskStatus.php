@@ -11,7 +11,7 @@
  *
  */
 
-include "obj.DatabaseConnection.php";
+include_once "obj.DatabaseConnection.php";
 
 class TaskStatus {
 

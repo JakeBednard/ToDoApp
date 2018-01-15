@@ -102,3 +102,21 @@ Estimated (hours): 2
 Actual (hours): 6
 Notes:
 Issues: 
+
+Task: Create Unit Test
+Estimated (hours): 2
+Actual (hours): 2
+Notes:
+Issues: 
+
+Task: Update Documentation
+Estimated (hours): .5
+Actual (hours): .5
+Notes:
+Issues:
+
+Task: Misc Wrap-Up Activities
+Estimated (hours): .5
+Actual (hours): 2.5
+Notes:
+Issues:
