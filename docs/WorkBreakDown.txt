@@ -73,7 +73,6 @@ Actual (hours): 1
 Notes:
 Issues: 
 
-
 Task: Create HTML Front-End
 Estimated (hours): 2
 Actual (hours): 5
@@ -95,5 +94,11 @@ Issues:
 Task: Create TaskStatus object and router
 Estimated (hours): 0.5
 Actual (hours): 0.5
+Notes:
+Issues: 
+
+Task: Create Javascript Middleware
+Estimated (hours): 2
+Actual (hours): 2
 Notes:
 Issues: 
