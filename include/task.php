@@ -9,6 +9,7 @@
 include_once "obj.Task.php";
 
 $requestType = $_SERVER['REQUEST_METHOD'];
+header("Content-Type: application/json; charset=UTF-8");
 
 $task = new Task();
 
@@ -26,19 +27,33 @@ if ($requestType === 'GET') {
 
 elseif ($requestType === 'POST') {
 
+    $json_as_str = file_get_contents('php://input');
+    $json_data = json_decode($json_as_str);
 
+    echo $task->insert(
+        $json_data->SZ_DESCRIPTION,
+        $json_data->DT_DUE_DATE,
+        $json_data->N_TASK_STATUS_FK
+    );
 
 }
 
 elseif ($requestType === 'UPDATE') {
 
+    $json_as_str = file_get_contents('php://input');
+    $json_data = json_decode($json_as_str);
+
+    echo $task->update(
+        $_GET['id'],
+        $json_data->SZ_DESCRIPTION,
+        $json_data->DT_DUE_DATE,
+        $json_data->N_TASK_STATUS_FK
+    );
+
 }
 
 elseif ($requestType === 'DELETE') {
-
+    echo $task->delete($_GET['id']);
 }
 
-else {
-    // Nothing Happens - Unsupported request
-    return;
-}
+return;

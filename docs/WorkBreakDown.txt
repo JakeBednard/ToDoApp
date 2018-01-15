@@ -82,7 +82,12 @@ Issues:
 
 Task: Create REST task object
 Estimated (hours): 1.5
-Actual (hours):
+Actual (hours): 1.5
 Notes: Needed to read up on PHP REST/JSON.
 Issues: 
 
+Task: Create task routing code
+Estimated (hours): 0.5
+Actual (hours): 0.5
+Notes:
+Issues: 
