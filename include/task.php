@@ -27,13 +27,13 @@ if ($requestType === 'GET') {
 
 elseif ($requestType === 'POST') {
 
-    $json_as_str = file_get_contents('php://input');
-    $json_data = json_decode($json_as_str);
+    //$json_as_str = file_get_contents('php://input');
+    $json_data = json_decode(file_get_contents('php://input'), true);
 
-    echo $task->insert(
-        $json_data->SZ_DESCRIPTION,
-        $json_data->DT_DUE_DATE,
-        $json_data->N_TASK_STATUS_FK
+    return $task->insert(
+        $json_data["SZ_DESCRIPTION"],
+        $json_data["DT_DUE_DATE"],
+        $json_data["N_TASK_STATUS_FK"]
     );
 
 }
@@ -41,14 +41,16 @@ elseif ($requestType === 'POST') {
 elseif ($requestType === 'UPDATE') {
 
     $json_as_str = file_get_contents('php://input');
-    $json_data = json_decode($json_as_str);
+    $json_data = json_decode(file_get_contents('php://input'), true);
 
-    echo $task->update(
+    $task->update(
         $_GET['id'],
         $json_data->SZ_DESCRIPTION,
         $json_data->DT_DUE_DATE,
         $json_data->N_TASK_STATUS_FK
     );
+
+    return $json_data->SZ_DESCRIPTION;
 
 }
 

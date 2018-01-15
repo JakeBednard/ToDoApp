@@ -67,7 +67,7 @@ class Task {
             );
         ");
 
-        return data;
+        return $data;
 
     }
 
@@ -85,7 +85,7 @@ class Task {
               N_TASK_PK = {id};
         ");
 
-        return data;
+        return $data;
 
     }
 

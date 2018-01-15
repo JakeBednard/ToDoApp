@@ -32,6 +32,7 @@ $(document).ready(function(){
         var tasks = getAllTasks();
 
         clearTaskTable();
+        clearTaskCount();
         $.each(tasks, function(i, task) {
             addTaskTableRow(task.N_TASK_PK, task.SZ_DESCRIPTION, task.DT_DUE_DATE, task.SZ_STATUS_TYPE, task.N_TASK_STATUS_FK);
             incrementTaskDecision(task.SZ_STATUS_TYPE);
@@ -44,7 +45,7 @@ $(document).ready(function(){
         dueDate = yyyymmdd_to_mmddyyyy(dueDate);
 
         $("#task-table tbody").append(`
-            <tr id="` + statusKey + `">
+            <tr id="` + id + `">
                 <td class="` + statusDescription + `"></td>
                 <td>` + description + `</td>
                 <td class="text-center">` + dueDate + `</td>
@@ -94,6 +95,14 @@ $(document).ready(function(){
         }
     }
 
+    function clearTaskCount() {
+        $("#pending-task").text('0');
+        $("#started-task").text('0');
+        $("#complted-task").text('0');
+        $("#late-task").text('0');
+        $("#total-task").text('0');
+    }
+
     function incrementTaskCount(spanName) {
         $(spanName).text(
             parseInt($(spanName).text()) + 1
@@ -130,6 +139,42 @@ $(document).ready(function(){
         return builder;
 
     }
+
+    $("#add-task-submit").click(function() {
+        submitNewTaskToDB(
+            {
+                SZ_DESCRIPTION: $("#task-SZ_TASK_DESCRIPTION").val(),
+                DT_DUE_DATE: $("#task-DT_DUE_DATE").val(),
+                N_TASK_STATUS_FK: 1
+            }
+        );
+        loadTaskTable();
+    });
+
+    function submitNewTaskToDB(data) {
+        console.log(data);
+        $.ajax({
+            url: "include/task.php",
+            type: "POST",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify(data),
+            complete: function(response) {
+                console.log(response);
+            }
+        });
+    }
+
+    $(".delete-task").click(function(event) {
+       var id = $(event.target).closest("tr").attr("id");
+        $.ajax({
+            url: "include/task.php?id=" + id,
+            type: "DELETE",
+            complete: function(response) {
+                loadTaskTable();
+            }
+        });
+    });
 
     function yyyymmdd_to_mmddyyyy(dueDate) {
         return dueDate.slice(5,7) + '/' + dueDate.slice(8,10) + '/' + dueDate.slice(0,4);

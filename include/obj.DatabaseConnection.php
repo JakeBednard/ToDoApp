@@ -39,15 +39,30 @@ class DB {
             $rows[] = $row;
         }
 
+        $connection->close();
+
         return json_encode($rows);
 
     }
 
-    function query($query) {
+    function query($userquery) {
 
         $connection = new mysqli($this->server, $this->username, $this->password, $this->database);
 
-        return $connection->query($query);
+        if($connection->connect_error) {
+            die("Connection Failed: " . $connection->connect_error);
+        }
+
+
+        if ($connection->query($userquery) === TRUE) {
+            return "New record created successfully";
+        } else {
+            return "Error: " . $userquery . "<br>" . $connection->error;
+        }
+
+        $connection->close();
+
+        return;
 
     }
 
