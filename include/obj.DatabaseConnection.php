@@ -46,13 +46,8 @@ class DB {
     function query($query) {
 
         $connection = new mysqli($this->server, $this->username, $this->password, $this->database);
-        $result = -1;
 
-        if($connection->query($query) === TRUE) {
-            $result= 0;
-        }
-
-        return $result;
+        return $connection->query($query);
 
     }
 

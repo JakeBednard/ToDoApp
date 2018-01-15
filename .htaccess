@@ -5,7 +5,7 @@ Options -Indexes
     Deny from all
 </FilesMatch>
 
-<files DatabaseConnection.php>
+<FilesMatch "^obj\..*\.php$">
     order allow,deny
     deny from all
-</files>
+</FilesMatch>
