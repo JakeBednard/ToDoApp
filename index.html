@@ -12,28 +12,27 @@
 </head>
 <body>
 
+    <!-- Don't need a nav bar now, but maybe in the future...
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <!-- Don't need a nav bar now, but maybe in the future...
+
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                -->
                 <span class="navbar-brand">ToDo Task Tracking Application</span>
             </div>
-            <!-- Don't need a nav bar now, but maybe in the future...
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="#">Home</a></li>
                 </ul>
             </div>
-            -->
         </div>
     </nav>
+    -->
 
     <div class="container">
         <div class="row">
@@ -81,6 +80,25 @@
                 <div class="row">
                     <div class="col-md-12" id="total-tasks-count">
                         Total Tasks: <span id="total-task">0</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" id="edit-task-container-box" hidden>
+                        <form class="form-inline">
+                            <fieldset>
+                                <legend><h3>Please edit your task:</h3></legend>
+                                <input type="hidden" id="edit-id" value="">
+                                <input type="hidden" id="edit-task-status-id" value="">
+                                <div class="form-group col-md-offset-1">
+                                    <input type="text" class="form-control" id="edittask-SZ_TASK_DESCRIPTION" placeholder="Enter your task..." size="104">
+                                </div>
+                                <div class="form-group">
+                                    <input type="date" class="form-control" id="edittask-DT_DUE_DATE">
+                                </div>
+                                <button type="button" class="btn btn-sm btn-primary" id="edit-task-submit">EDIT TASK</button>
+                            </fieldset>
+                            <br><br>
+                        </form>
                     </div>
                 </div>
                 <div class="row">

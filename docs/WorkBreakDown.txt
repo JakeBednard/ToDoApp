@@ -99,6 +99,6 @@ Issues:
 
 Task: Create Javascript Middleware
 Estimated (hours): 2
-Actual (hours): 4
+Actual (hours): 6
 Notes:
 Issues: 

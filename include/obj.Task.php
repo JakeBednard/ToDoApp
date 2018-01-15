@@ -82,7 +82,7 @@ class Task {
                 DT_DUE_DATE = '{$dueDate}',
                 N_TASK_STATUS_FK = {$taskStatusFk}
             WHERE
-              N_TASK_PK = {id};
+              N_TASK_PK = {$id};
         ");
 
         return $data;

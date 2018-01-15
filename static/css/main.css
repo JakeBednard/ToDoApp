@@ -2,6 +2,7 @@ body {
     background-color: #FFF;
     background: linear-gradient(to bottom, transparent, white 50%), url("../image/banner.png") 0px -400px no-repeat;
     background-size: 100% 1200px;
+    padding-bottom: 50px;
 }
 
 nav {
@@ -101,6 +102,11 @@ tr:hover > .Started {
     border-radius: 7px 7px 0px 0px;
 }
 
+#edit-task-container-box {
+    background-color: rgba(255,255,255,0.95);
+    box-shadow: inset 0px 0px 15px 5px rgba(33,33,33,0.1);
+}
+
 #task-stats-container {
 
 }
@@ -134,7 +140,7 @@ tr:hover > .Started {
     font-weight: bold;
     font-size: 2em;
     color: #999;
-    margin-top: 75px;
+    margin-top: 25px;
     margin-bottom: -45px;
     padding-top: 10px;
     text-align: right;

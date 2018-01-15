@@ -27,7 +27,6 @@ if ($requestType === 'GET') {
 
 elseif ($requestType === 'POST') {
 
-    //$json_as_str = file_get_contents('php://input');
     $json_data = json_decode(file_get_contents('php://input'), true);
 
     return $task->insert(
@@ -40,17 +39,14 @@ elseif ($requestType === 'POST') {
 
 elseif ($requestType === 'UPDATE') {
 
-    $json_as_str = file_get_contents('php://input');
     $json_data = json_decode(file_get_contents('php://input'), true);
 
-    $task->update(
+    return $task->update(
         $_GET['id'],
-        $json_data->SZ_DESCRIPTION,
-        $json_data->DT_DUE_DATE,
-        $json_data->N_TASK_STATUS_FK
+        $json_data["SZ_DESCRIPTION"],
+        $json_data["DT_DUE_DATE"],
+        $json_data["N_TASK_STATUS_FK"]
     );
-
-    return $json_data->SZ_DESCRIPTION;
 
 }
 
