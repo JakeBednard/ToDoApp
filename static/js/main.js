@@ -34,6 +34,7 @@ $(document).ready(function(){
         clearTaskTable();
         $.each(tasks, function(i, task) {
             addTaskTableRow(task.N_TASK_PK, task.SZ_DESCRIPTION, task.DT_DUE_DATE, task.SZ_STATUS_TYPE, task.N_TASK_STATUS_FK);
+            incrementTaskDecision(task.SZ_STATUS_TYPE);
         });
 
     }
@@ -64,10 +65,45 @@ $(document).ready(function(){
                 </td>
             </tr>
         `);
+
+        var today = new Date();
+        if (Date.parse(dueDate) < today && statusDescription !== 'Completed') {
+            $("#task-table tbody > tr:last").addClass("danger");
+            incrementTaskCount("#late-task")
+        }
+
     }
 
     function clearTaskTable() {
         $("#task-table tbody").empty();
+    }
+
+    function incrementTaskDecision(statusType) {
+        incrementTaskCount("#total-task");
+        if(statusType === "Completed") {
+            incrementTaskCount("#completed-task");
+        }
+        else if(statusType === "Started") {
+            incrementTaskCount("#started-task");
+        }
+        else if(statusType === "Pending") {
+            incrementTaskCount("#pending-task");
+        }
+        else {
+            console.log("Unseen status type found.");
+        }
+    }
+
+    function incrementTaskCount(spanName) {
+        $(spanName).text(
+            parseInt($(spanName).text()) + 1
+        );
+    }
+
+    function decrementTaskCount(spanName) {
+        $(spanName).text(
+            parseInt($(spanName).text()) - 1
+        );
     }
 
     function fetchTaskStatuses() {
